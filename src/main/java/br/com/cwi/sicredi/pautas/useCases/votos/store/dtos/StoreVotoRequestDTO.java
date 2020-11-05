@@ -1,5 +1,6 @@
 package br.com.cwi.sicredi.pautas.useCases.votos.store.dtos;
 
+import br.com.cwi.sicredi.pautas.shared.databases.enums.VotoResposta;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,5 @@ public class StoreVotoRequestDTO {
     private String cpf;
 
     @NotNull
-    @Size(min = 3, max = 3)
-    private String resposta;
+    private VotoResposta resposta;
 }

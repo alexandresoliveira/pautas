@@ -1,5 +1,6 @@
 package br.com.cwi.sicredi.pautas.shared.databases.entities;
 
+import br.com.cwi.sicredi.pautas.shared.databases.enums.VotoResposta;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,7 +24,8 @@ public class Voto extends Base {
 
     @Column(name = "resposta")
     @NotNull
-    private String resposta;
+    @Enumerated(EnumType.STRING)
+    private VotoResposta resposta;
 
     @Column(name = "data_voto")
     @NotNull

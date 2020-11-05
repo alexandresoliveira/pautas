@@ -1,6 +1,7 @@
 package br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.services;
 
 import br.com.cwi.sicredi.pautas.shared.databases.entities.Votacao;
+import br.com.cwi.sicredi.pautas.shared.databases.enums.VotoResposta;
 import br.com.cwi.sicredi.pautas.shared.databases.repositories.VotacaoRepository;
 import br.com.cwi.sicredi.pautas.shared.databases.repositories.VotoRepository;
 import br.com.cwi.sicredi.pautas.shared.exceptions.ServiceApiException;
@@ -43,9 +44,9 @@ public class IndexResultadoService {
         IndexResultadoResponseDTO responseDTO = mapper.convertDtoWithEntity(optionalVotacao.get());
 
         votosByVotacao.forEach(voto -> {
-            if (voto.get("RESPOSTA").equals("Sim")) {
+            if (voto.get("RESPOSTA").equals(VotoResposta.SIM.name())) {
                 responseDTO.setNumVotosSim((BigInteger) voto.get("NUM_VOTOS"));
-            } else if (voto.get("RESPOSTA").equals("Não")) {
+            } else if (voto.get("RESPOSTA").equals(VotoResposta.NAO.name())) {
                 responseDTO.setNumVotosNao((BigInteger) voto.get("NUM_VOTOS"));
             }
         });
