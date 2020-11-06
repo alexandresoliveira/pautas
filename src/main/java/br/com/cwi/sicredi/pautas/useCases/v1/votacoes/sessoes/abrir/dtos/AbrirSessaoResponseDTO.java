@@ -1,10 +1,9 @@
-package br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos;
+package br.com.cwi.sicredi.pautas.useCases.v1.votacoes.sessoes.abrir.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 

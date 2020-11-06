@@ -1,37 +1,32 @@
-package br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.services;
+package br.com.cwi.sicredi.pautas.useCases.v1.votacoes.sessoes.abrir.services;
 
 import br.com.cwi.sicredi.pautas.shared.databases.entities.Pauta;
 import br.com.cwi.sicredi.pautas.shared.databases.entities.Votacao;
 import br.com.cwi.sicredi.pautas.shared.databases.repositories.PautaRepository;
 import br.com.cwi.sicredi.pautas.shared.databases.repositories.VotacaoRepository;
 import br.com.cwi.sicredi.pautas.shared.exceptions.ServiceApiException;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos.AbrirSessaoRequestDTO;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos.AbrirSessaoResponseDTO;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.mappers.AbrirSessaoMapper;
-import org.springframework.http.HttpStatus;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.sessoes.abrir.dtos.AbrirSessaoRequestDTO;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.sessoes.abrir.dtos.AbrirSessaoResponseDTO;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.sessoes.abrir.mappers.AbrirSessaoMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Optional;
 
 @Service
 public class AbrirSessaoService {
 
-    private final VotacaoRepository votacaoRepository;
-    private final PautaRepository pautaRepository;
-    private final AbrirSessaoMapper mapper;
+    @Autowired
+    private VotacaoRepository votacaoRepository;
 
-    public AbrirSessaoService(
-            VotacaoRepository votacaoRepository,
-            PautaRepository pautaRepository,
-            AbrirSessaoMapper mapper) {
-        this.votacaoRepository = votacaoRepository;
-        this.pautaRepository = pautaRepository;
-        this.mapper = mapper;
-    }
+    @Autowired
+    private PautaRepository pautaRepository;
+
+    @Autowired
+    private AbrirSessaoMapper mapper;
 
     public AbrirSessaoResponseDTO execute(AbrirSessaoRequestDTO dto) {
         Optional<Pauta> optionalPauta = pautaRepository.findById(dto.getPautaId());

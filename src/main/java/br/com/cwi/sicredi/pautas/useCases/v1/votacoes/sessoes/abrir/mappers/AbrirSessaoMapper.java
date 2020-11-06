@@ -1,8 +1,8 @@
-package br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.mappers;
+package br.com.cwi.sicredi.pautas.useCases.v1.votacoes.sessoes.abrir.mappers;
 
 import br.com.cwi.sicredi.pautas.shared.databases.entities.Votacao;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos.AbrirSessaoRequestDTO;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos.AbrirSessaoResponseDTO;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.sessoes.abrir.dtos.AbrirSessaoRequestDTO;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.sessoes.abrir.dtos.AbrirSessaoResponseDTO;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
