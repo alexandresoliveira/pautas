@@ -1,4 +1,4 @@
-package br.com.cwi.sicredi.pautas.useCases.pautas.store.dtos;
+package br.com.cwi.sicredi.pautas.useCases.v1.pautas.store.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 import java.util.UUID;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 public class StorePautaResponseDTO {

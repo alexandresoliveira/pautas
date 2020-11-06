@@ -1,8 +1,8 @@
-package br.com.cwi.sicredi.pautas.useCases.pautas.store.mappers;
+package br.com.cwi.sicredi.pautas.useCases.v1.pautas.store.mappers;
 
 import br.com.cwi.sicredi.pautas.shared.databases.entities.Pauta;
-import br.com.cwi.sicredi.pautas.useCases.pautas.store.dtos.StorePautaRequestDTO;
-import br.com.cwi.sicredi.pautas.useCases.pautas.store.dtos.StorePautaResponseDTO;
+import br.com.cwi.sicredi.pautas.useCases.v1.pautas.store.dtos.StorePautaRequestDTO;
+import br.com.cwi.sicredi.pautas.useCases.v1.pautas.store.dtos.StorePautaResponseDTO;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
