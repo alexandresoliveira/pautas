@@ -4,6 +4,10 @@
 
 Sistema para computar votos para pautas.
 
+### Integração com mensageria
+
+--- ***Em andamento*** ---
+
 ### Versionamento da Api
 
 Foi analisado o versionamento por path e por headers eu escolhi por path
