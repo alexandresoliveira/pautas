@@ -1,8 +1,8 @@
-package br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.controllers;
+package br.com.cwi.sicredi.pautas.useCases.v1.votacoes.resultados.controllers;
 
 import br.com.cwi.sicredi.pautas.shared.utils.ApiVersionHelper;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.dtos.IndexResultadoResponseDTO;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.services.IndexResultadoService;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.resultados.dtos.IndexResultadoResponseDTO;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.resultados.services.IndexResultadoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

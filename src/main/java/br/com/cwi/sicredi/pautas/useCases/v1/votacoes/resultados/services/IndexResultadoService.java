@@ -1,13 +1,13 @@
-package br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.services;
+package br.com.cwi.sicredi.pautas.useCases.v1.votacoes.resultados.services;
 
 import br.com.cwi.sicredi.pautas.shared.databases.entities.Votacao;
 import br.com.cwi.sicredi.pautas.shared.databases.enums.VotoResposta;
 import br.com.cwi.sicredi.pautas.shared.databases.repositories.VotacaoRepository;
 import br.com.cwi.sicredi.pautas.shared.databases.repositories.VotoRepository;
 import br.com.cwi.sicredi.pautas.shared.exceptions.ServiceApiException;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.dtos.IndexResultadoRequestDTO;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.dtos.IndexResultadoResponseDTO;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.mappers.IndexResultadoMapper;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.resultados.dtos.IndexResultadoResponseDTO;
+import br.com.cwi.sicredi.pautas.useCases.v1.votacoes.resultados.mappers.IndexResultadoMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
@@ -19,18 +19,14 @@ public class IndexResultadoService {
     private static String EM_ANDAMENTO = "Em andamento";
     private static String ENCERRADO = "Encerrado";
 
-    private final VotacaoRepository votacaoRepository;
-    private final VotoRepository votoRepository;
-    private final IndexResultadoMapper mapper;
+    @Autowired
+    private VotacaoRepository votacaoRepository;
 
-    public IndexResultadoService(
-            VotacaoRepository votacaoRepository,
-            VotoRepository votoRepository,
-            IndexResultadoMapper mapper) {
-        this.votacaoRepository = votacaoRepository;
-        this.votoRepository = votoRepository;
-        this.mapper = mapper;
-    }
+    @Autowired
+    private VotoRepository votoRepository;
+
+    @Autowired
+    private IndexResultadoMapper mapper;
 
     public IndexResultadoResponseDTO execute(UUID idVotacao) {
         Optional<Votacao> optionalVotacao = votacaoRepository.findById(idVotacao);

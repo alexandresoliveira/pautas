@@ -1,8 +1,7 @@
-package br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.dtos;
+package br.com.cwi.sicredi.pautas.useCases.v1.votacoes.resultados.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigInteger;
