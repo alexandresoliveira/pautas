@@ -80,3 +80,19 @@ e segue o link para o arquivo de restauração do workspace
     
 As exceções são tratadas no Advice e todas são personalizadas.
 
+### Executando o projeto
+
+No diretório raiz do projeto, siga os passos:
+
+-   Para instalar:
+    ```bash
+    $ mvn clean install
+    ```
+
+-   Para executar
+    ```bash
+    $ java -jar ./target/pautas-0.0.1.jar -Dprofile=dev
+    ```
+
+
+
