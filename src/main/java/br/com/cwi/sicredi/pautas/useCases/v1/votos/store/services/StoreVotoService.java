@@ -35,17 +35,17 @@ public class StoreVotoService {
         entity.setDataVoto(new Date());
 
         if (!cpfValido(entity.getCpf())) {
-            throw new ServiceApiException("O cpf informado não é valido!", HttpStatus.NOT_FOUND);
+            throw new ServiceApiException("O cpf informado não é valido!");
         }
 
         Optional<Votacao> optionalVotacao = votacaoRepository.findById(entity.getVotacao().getId());
         if (!optionalVotacao.isPresent()) {
-            throw new ServiceApiException("A sessão de votação não foi encontrada!", HttpStatus.NOT_FOUND);
+            throw new ServiceApiException("A sessão de votação não foi encontrada!");
         }
 
         Votacao votacao = optionalVotacao.get();
         if (!entity.getDataVoto().before(votacao.getDataEncerramento())) {
-            throw new ServiceApiException("A sessão de votação foi encerrada!", HttpStatus.PRECONDITION_FAILED);
+            throw new ServiceApiException("A sessão de votação foi encerrada!");
         }
 
         Optional<Voto> optionalVoto = votoRepository.findByVotacaoAndCpf(votacao, entity.getCpf());

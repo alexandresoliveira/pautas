@@ -1,17 +1,16 @@
 package br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.controllers;
 
-import br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.dtos.IndexResultadoRequestDTO;
+import br.com.cwi.sicredi.pautas.shared.utils.ApiVersionHelper;
 import br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.dtos.IndexResultadoResponseDTO;
 import br.com.cwi.sicredi.pautas.useCases.votacoes.resultados.services.IndexResultadoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "votacoes/resultado")
+@RequestMapping(value = ApiVersionHelper.V_1 + "/votacoes/resultado")
 public class IndexResultadoController {
 
     private final IndexResultadoService service;

@@ -1,5 +1,6 @@
 package br.com.cwi.sicredi.pautas.useCases.votos.store.controllers;
 
+import br.com.cwi.sicredi.pautas.shared.utils.ApiVersionHelper;
 import br.com.cwi.sicredi.pautas.useCases.votos.store.dtos.StoreVotoRequestDTO;
 import br.com.cwi.sicredi.pautas.useCases.votos.store.services.StoreVotoService;
 import org.springframework.http.HttpStatus;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "votos")
+@RequestMapping(value = ApiVersionHelper.V_1 + "votos")
 public class StoreVotoController {
 
     private final StoreVotoService service;

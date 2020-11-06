@@ -8,6 +8,7 @@ import br.com.cwi.sicredi.pautas.shared.exceptions.ServiceApiException;
 import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos.AbrirSessaoRequestDTO;
 import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos.AbrirSessaoResponseDTO;
 import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.mappers.AbrirSessaoMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
