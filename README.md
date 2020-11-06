@@ -43,7 +43,8 @@ Está api tem as seguintes rotas:
     -   Request
         ```json
         {
-            "pautaId": "0e36461a-efa1-49ad-a0b6-0c8c1fe3b8cd"
+            "pautaId": "0e36461a-efa1-49ad-a0b6-0c8c1fe3b8cd",
+            "encerraEm": <opcional, formato: "2020-11-05T21:47:39">
         }
         ```
     -   Response | 201
