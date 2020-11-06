@@ -24,6 +24,7 @@
 
 		<orika.version>1.4.2</orika.version>
 		<hibernate-validator.version>5.4.3.Final</hibernate-validator.version>
+		<lombok.version>1.18.16</lombok.version>
 	</properties>
 
 	<dependencies>
@@ -47,6 +48,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -80,7 +83,7 @@
 			</activation>
 			<properties>
 				<spring.profiles.active>dev</spring.profiles.active>
-				<db.url>jdbc:h2:file:${basedir}/data/pautas-dev</db.url>
+				<db.url>jdbc:h2:file:${basedir}/database/dev</db.url>
 				<db.user>sa</db.user>
 				<db.password>password</db.password>
 			</properties>
@@ -115,6 +118,13 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${lombok.version}</version>
+						</path>
+					</annotationProcessorPaths>
 					<target>${java.version}</target>
 					<source>${java.version}</source>
 					<encoding>${encoding}</encoding>
@@ -129,6 +139,19 @@
 					</delimiters>
 					<useDefaultDelimiters>false</useDefaultDelimiters>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
+				<version>1.18.16.0</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>delombok</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.flywaydb</groupId>
