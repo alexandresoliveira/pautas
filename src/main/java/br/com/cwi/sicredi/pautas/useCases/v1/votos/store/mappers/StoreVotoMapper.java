@@ -1,11 +1,7 @@
-package br.com.cwi.sicredi.pautas.useCases.votos.store.mappers;
+package br.com.cwi.sicredi.pautas.useCases.v1.votos.store.mappers;
 
-import br.com.cwi.sicredi.pautas.shared.databases.entities.Votacao;
 import br.com.cwi.sicredi.pautas.shared.databases.entities.Voto;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos.AbrirSessaoRequestDTO;
-import br.com.cwi.sicredi.pautas.useCases.votacoes.sessoes.abrir.dtos.AbrirSessaoResponseDTO;
-import br.com.cwi.sicredi.pautas.useCases.votos.store.dtos.StoreVotoRequestDTO;
-import br.com.cwi.sicredi.pautas.useCases.votos.store.services.StoreVotoService;
+import br.com.cwi.sicredi.pautas.useCases.v1.votos.store.dtos.StoreVotoRequestDTO;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
@@ -22,7 +18,6 @@ public class StoreVotoMapper {
 
         this.mapperFactory
                 .classMap(StoreVotoRequestDTO.class, Voto.class)
-                .field("votacaoId", "votacao.id")
                 .byDefault()
                 .register();
 

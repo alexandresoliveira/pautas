@@ -1,4 +1,4 @@
-package br.com.cwi.sicredi.pautas.useCases.votos.store.dtos;
+package br.com.cwi.sicredi.pautas.useCases.v1.votos.store.dtos;
 
 import br.com.cwi.sicredi.pautas.shared.databases.enums.VotoResposta;
 import lombok.AllArgsConstructor;
