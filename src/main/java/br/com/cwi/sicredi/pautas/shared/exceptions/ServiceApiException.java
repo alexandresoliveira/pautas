@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 public class ServiceApiException extends RuntimeException {
 
     @Getter
-    private HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+    private HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
 
     public ServiceApiException(String message) {
         super(message);
